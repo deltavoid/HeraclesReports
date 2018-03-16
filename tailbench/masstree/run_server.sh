@@ -2,7 +2,7 @@
 
 if [[ -z "${NTHREADS}" ]]; then NTHREADS=1; fi
 
-QPS=1000
+#QPS=1000
 MAXREQS=3000
 WARMUPREQS=14000
 
