@@ -11,6 +11,7 @@ TBENCH_MAXREQS=${MAXREQS} TBENCH_WARMUPREQS=${WARMUPREQS} chrt -r 99 \
 echo $! > server.pid
 
 sleep 5 # Allow server to come up
+echo ''
 
 #TBENCH_QPS=${QPS} TBENCH_MINSLEEPNS=10000 chrt -r 99 ./mttest_client_networked &
 #echo $! > client.pid
