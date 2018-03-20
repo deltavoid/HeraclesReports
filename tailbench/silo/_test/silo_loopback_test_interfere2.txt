@@ -2,6 +2,9 @@
 
 silo loopback test
 
+CPU intel 6700 closing hyperthread and C states
+OS Ubuntu16.04 Linux4.13.0
+
 
 QPS=2000    REQUESTS=200000    THREAD=1    CPU load=35%    CPU freq=1.20GHZ(estimate)    no interfere
     95th percentile latency 2.939 ms | max latency 22.527 ms
