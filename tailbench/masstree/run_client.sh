@@ -21,5 +21,5 @@ wait $(cat client.pid)
 # Clean up
 #./kill_networked.sh
 
-#python ../utilities/parselats.py lats.bin
+python ../utilities/parselats.py lats.bin
     
