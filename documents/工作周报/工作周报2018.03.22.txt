@@ -3,7 +3,7 @@
 张乾宇
 
 
-本周主要进行masstree的测试，碰到了一些问题和奇怪的现象。
+近期主要进行masstree的测试，碰到了一些问题和奇怪的现象。
 
 
 一、Intel i7-6700上的测试情况
@@ -122,7 +122,7 @@ QPS    MAXREQS    cpu load(%)    95th latency(ms)    max latency(ms)
 
 loopback模式的测试结果较为正常。
 network模式将QPS降到了极低的数值，何种原因影响了系统所能运行的最大QPS尚不清楚。
-另一个奇怪的问题是network模式测得的尾延迟低于loopback模式的尾延迟，具体原因尚不清楚，是否是测试条件错误也未可知。
+另一个奇怪的问题是network模式测得的尾延迟低于loopback模式的尾延迟，具体原因尚不清楚。
 
 
 
