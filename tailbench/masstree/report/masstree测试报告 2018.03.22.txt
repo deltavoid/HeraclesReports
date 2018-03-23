@@ -1,5 +1,5 @@
 
-工作周报 2018.03.22
+masstree测试报告 2018.03.22
 张乾宇
 
 
@@ -121,7 +121,7 @@ QPS    MAXREQS    cpu load(%)    95th latency(ms)    max latency(ms)
                                  0.752               1.330
 
 loopback模式的测试结果较为正常。
-network模式将QPS降到了极低的数值，何种原因影响了系统所能运行的最大QPS尚不清楚。
+network模式将QPS降到了极低的数值，使得程序可以运行，何种原因影响了系统所能运行的最大QPS尚不清楚。
 另一个奇怪的问题是network模式测得的尾延迟低于loopback模式的尾延迟，具体原因尚不清楚。
 
 
