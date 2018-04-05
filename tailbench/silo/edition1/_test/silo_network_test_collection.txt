@@ -1,4 +1,7 @@
 
+silo netwrok test collocation
+
+
 silo network test no interfere
 cpu: intel i9-7960x closing hyperthread.
 os: ubuntu16.04  linux4.13.0
@@ -47,5 +50,30 @@ QPS    MAXREQS    cpu load(%)    95th latency(ms)    max latency(ms)
 
 4000   400000     30             0.577               29.618
 
-6000   600000     45             5.001               683.507
+6000   600000     45             6.821               1053.816
+
+
+silo network test no interfere
+cpu: intel i7-6700
+os: ubuntu16.04  linux4.13.0
+
+QPS    MAXREQS    cpu load(%)    95th latency(ms)    max latency(ms)
+2000   200000     15             0.560               24.245
+
+4000   400000     25             0.575               26.513
+
+6000   600000     35             1.424               104.519
+
+
+silo network test interfere hyperthread
+cpu: intel i7-6700
+os: ubuntu16.04  linux4.13.0
+interfere: interfere_cache_random on the same physical core
+
+QPS    MAXREQS    cpu load(%)    95th latency(ms)    max latency(ms)
+2000   200000     20             0.504               20.290
+
+4000   400000     35             2.394               23.297
+
+6000   600000     55             13.416              1826.231
 
