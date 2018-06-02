@@ -1,0 +1,89 @@
+
+
+environment
+
+    Xeon(R) CPU E5-2683 v4 @ 2.10GHz  with performance state
+    Ubuntu 16.04  Linux 4.13.0
+    Gigabit Ethernet
+
+program statics
+
+    8 threads, max QPS = 10000, slo latency = 6ms (actually 4.761ms @ QPS = 10000)
+
+
+
+baseline
+
+QPS    latency(ms)    CPU utilization(%)    mem BW(bytes/s)   net bw(bits/s)
+                                                    
+
+2000   3.900          30                    20                1844568
+
+4000   3.918          60                    30                3819816
+
+6000   4.024          80                    50                5450280
+
+8000   4.093          100                   70                6705600
+
+10000  4.652          120                   90                8361144
+
+
+
+iperf
+
+QPS    latency(ms)    CPU utilization(%)    mem BW(bytes/s)   net bw(bits/s)
+                      LC / total            total             LC / BE
+
+2000   5.203          30 / 30               49                1684320 / 688264752
+
+4000   5.465          50 / 50               52                3248240 / 686177520
+
+6000   4.576          70 / 70               48                3899544 / 685655712
+
+8000   4.208          100 / 100             73                6879840 / 0
+
+10000  4.899          120 / 120             102.5             8224920 / 0
+
+    latency under iperf test is not stable, the network controller / driver needs to be upgraded, maybe to be attached with priority policy.
+
+
+
+streamCache
+
+    ./stream-llc_multithread 8 32000 100
+
+QPS    latency(ms)    CPU utilization(%)    mem BW(bytes/s)   net bw(bits/s)
+                      LC / total            total             LC
+
+2000   3.821          30 / 630              12016             1861992
+
+4000   3.841          50 / 650              13927             3651648
+
+6000   3.942          70 / 670              14844             5344944
+
+8000   4.122          100 / 100             71                6818576
+
+10000  4.814          120 / 120             87                8233368
+
+
+stream Mem
+
+    ./stream-llc_multithread 8 320000 1000
+
+QPS    latency(ms)    CPU utilization(%)    mem BW(bytes/s)   net bw(bits/s)
+                      LC / total            total             LC
+
+2000   3.891          30 / 630              25709             1882056
+
+4000   3.825          60 / 650              26007             3726888
+
+6000   4.009          75 / 575              25772             5353920
+       after BE gets 6 cores, the latency of LC boom, then BE is disabled and a new peroid starts.
+
+8000   4.112          100 / 100             78                6852648
+
+10000  4.911          120 / 120             101               8414208
+
+
+
+
